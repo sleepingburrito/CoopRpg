@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>POC</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="images/favicon.png" type="image/png">
+		<link rel="stylesheet" type="text/css" href="css/Poc.css">
+	</head>
+	
+	<body>
+		<canvas id="screen"></canvas>
+
+		<!--order matters (or I think at least, javascript might be leanlent)-->
+		<script src="js/SettingsData.js"></script>
+		<script src="js/PrngData.js"></script>
+		<script src="js/Tools.js"></script>
+		<script src="js/Graphics.js"></script>
+		<script src="js/Map.js"></script>
+		<script src="js/KeyIO.js"></script>
+		<script src="js/DynamicWorldObject.js"></script>
+		<script src="js/Ui.js"></script>
+		<script src="js/ScreenEffectsData.js"></script>
+		<script src="js/OnlinePlay.js"></script>
+		<script src="js/Main.js"></script>
+	
+
+		<!--on screen buttons-->
+		<br>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_UP } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_UP } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_UP } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_UP } );" >↑</button>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_DOWN } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_DOWN } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_DOWN } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_DOWN } );" type="button" >↓</button>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_LEFT } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_LEFT } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_LEFT } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_LEFT } );" type="button" >←</button>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_RIGTH } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_RIGTH } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_RIGTH } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_RIGTH } );" type="button" >→</button>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_ACTION } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_ACTION } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_ACTION } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_ACTION } );" type="button" >A</button>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_BACK } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_BACK } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_BACK } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_BACK } );" type="button" >B</button>
+		<button ontouchstart="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_MENU } );" onmousedown="UpdateKeyState( { type: 'keydown', keyCode: KEY_SCANCODE_MENU } );" ontouchend="UpdateKeyState( { keyCode: KEY_SCANCODE_MENU } );" onmouseup="UpdateKeyState( { keyCode: KEY_SCANCODE_MENU } );" type="button" >M</button>
+
+		<!--internet-->
+		<br>
+		<br>
+		<button type="button" onclick="StartConnection( ONLINE_HOST, stateId );">host</button>
+		<button type="button" onclick="StartConnection( ONLINE_GUEST, stateId );">guest</button>
+		<button type="button" onclick="SetSpriteNPC( NPC_SPRID_1, playerNPC );">sprite 1</button> 
+		<button type="button" onclick="SetSpriteNPC( NPC_SPRID_2, playerNPC );">sprite 2</button> 
+		<button type="button" onclick="EndConnection();">disconnect</button><br>
+
+	</body>
+
+</html>

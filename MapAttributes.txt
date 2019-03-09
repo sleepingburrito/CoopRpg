@@ -1,0 +1,11 @@
+visible: 0/1
+teleportX: x in tile
+teleportY: y in tile
+staticText: string of of dialog
+water: 0/1
+grass: 0/1
+door: 0/1
+
+animation: 1
+delay: time in ms
+length: tiles to the left long the animation is
